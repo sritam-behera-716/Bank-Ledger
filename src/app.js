@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
 
+app.get("/", (req, res) => {
+    res.send("Bank Ledger is running perfectly");
+})
+
 app.use("/api/auth", authRouter);
 app.use("/api/account", accountRouter);
 app.use("/api/transaction", transactionRouter)
